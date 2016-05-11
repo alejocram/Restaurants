@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Restaurants
 //
-//  Created by Alejocram on 29/04/16.
-//  Copyright © 2016 Eafit. All rights reserved.
+//  Created by Alejocram on 6/05/16.
+//  Copyright © 2016 EAFIT. All rights reserved.
 //
 
 import UIKit
