@@ -15,7 +15,7 @@ class RestaurantListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        model.restaurants = RestaurantModel.restaurantsMock()
+        getRestaurants()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -106,5 +106,20 @@ class RestaurantListTableViewController: UITableViewController {
         let destinationViewController = segue.destinationViewController as! DetailTableViewController
         destinationViewController.restaurant = sender as! Restaurant
         
+    }
+    
+    func getRestaurants(){
+        model.getRestaurantsFromServer { (success, response) in
+            if success {
+                self.tableView.reloadData()
+            } else {
+                let alertController = UIAlertController(title: "Conexión", message: "No se pudo realizar la conexión", preferredStyle: .Alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(defaultAction)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
     }
 }

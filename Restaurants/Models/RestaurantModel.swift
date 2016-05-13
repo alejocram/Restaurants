@@ -8,8 +8,31 @@
 
 import UIKit
 
+typealias CompletionHandler = (success: Bool, response: [Restaurant]) ->()
+
 class RestaurantModel: NSObject {
     var restaurants = [Restaurant]()
+    
+    //MARK: Services
+    
+    func getRestaurantsFromServer(completion: CompletionHandler){
+        let request = RestaurantService()
+        request.getContacts { (success, response) in
+            if success {
+                self.restaurants.removeAll()
+                
+                for item in response {
+                    let restaurantTmp = Restaurant(name: item["name"] as! String, address: item["address"] as! String, details: item["details"] as! String, lat: item["lat"] as! Double, lon: item["lon"] as! Double, category: item["category"] as! String, schedule: item["schedule"] as! String, paymentMethods: item["paymentMethods"] as! String, wifi: item["wifi"] as! Bool, playground: item["playground"] as! Bool, webPage: item["webPage"] as! String, ranking: item["ranking"] as! Float, image: item["image"] as! String)
+                    
+                    self.restaurants.append(restaurantTmp)
+                    
+                    completion(success: true, response: self.restaurants)
+                }
+            } else {
+                completion(success: false, response: self.restaurants)
+            }
+        }
+    }
     
     //MARK: Mocks
     
