@@ -37,14 +37,18 @@ class DetailTableViewController: UITableViewController {
         self.nameTableViewCell.textLabel?.text = restaurant!.name
         self.addressTableViewCell.textLabel?.text = restaurant!.address
         self.detailsTextView.text = restaurant!.details
-        self.categoryTableViewCell.textLabel?.text = restaurant!.category
-        self.scheduleTableViewCell.textLabel?.text = restaurant!.schedule
+        self.categoryTableViewCell.detailTextLabel?.text = restaurant!.category
+        self.scheduleTableViewCell.detailTextLabel?.text = restaurant!.schedule
         self.paymentMethodsTableViewCell.detailTextLabel?.text = restaurant!.paymentMethods
         self.wifiTableViewCell.detailTextLabel?.text = (restaurant!.wifi == true) ? "Si" : "No"
         self.playgroundTableViewCell.detailTextLabel?.text = restaurant!.playground == true ? "Si" : "No"
         self.webPageTableViewCell.textLabel?.text = restaurant!.webPage
         self.rankingLabel.text = String(restaurant!.ranking!)
         self.imageImageView.image = UIImage(named: restaurant!.image!)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.detailsTextView.setContentOffset(CGPoint.zero, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
