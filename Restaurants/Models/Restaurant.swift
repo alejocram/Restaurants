@@ -44,17 +44,6 @@ class Restaurant: NSObject {
     convenience init(name:String, address:String, category:String, wifi:Bool, webPage:String, image:String){
         self.init(name: name, address: address, details: "dsi jfdishflshdigfhdsgdfis g h dghoidshg idsg dosgd", lat: 65.5545454, lon: -7.343434, category: category, schedule: "L-V 8-18", paymentMethods: "Efectivo, Mastercard, Visa", wifi: wifi, playground: false, webPage: webPage, ranking: 3, image: image)
     }
-    
-    static func restaurants() -> [Restaurant]{
-        let restaurants:[Restaurant] = [
-            Restaurant(name: "French Bread", address: "Calle 34 # 23-43", category: "Francesa", wifi: true, webPage: "https://www.google.com", image: "french-bread-restaurant"),
-            Restaurant(name: "Breakfast", address: "Calle 34 # 23-43", category: "Tipica", wifi: true, webPage: "https://www.apple.com", image: "breakfast-restaurant"),
-            Restaurant(name: "Pizza", address: "Calle 34 # 23-43", category: "Italiana", wifi: true, webPage: "https://www.yahoo.com", image: "pizza-restaurant"),
-            Restaurant(name: "Mexican", address: "Calle 34 # 23-43", category: "Mexicana", wifi: true, webPage: "https://www.microsoft.com", image: "mexican-restaurant"),
-            Restaurant(name: "Parrilla", address: "Calle 34 # 23-43", category: "Asados", wifi: true, webPage: "https://www.gmail.com", image: "parrilla-restaurant")
-        ]
-        return restaurants
-    }
 }
 
 

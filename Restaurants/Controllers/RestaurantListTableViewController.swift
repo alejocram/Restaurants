@@ -9,13 +9,13 @@
 import UIKit
 
 class RestaurantListTableViewController: UITableViewController {
-    var restaurants = [Restaurant]()
+    var model = RestaurantModel()
     let cellIdentifier = "restaurantCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        restaurants = Restaurant.restaurants()
+        model.restaurants = RestaurantModel.restaurantsMock()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -38,14 +38,14 @@ class RestaurantListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return restaurants.count
+        return model.restaurants.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! RestaurantTableViewCell
 
-        let restaurant = restaurants[indexPath.row]
+        let restaurant = model.restaurants[indexPath.row]
         // Configure the cell...
         cell.titleLabel.text = restaurant.name
         cell.detailsLabel.text = restaurant.details
@@ -56,7 +56,7 @@ class RestaurantListTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let restaurant = restaurants[indexPath.row]
+        let restaurant = model.restaurants[indexPath.row]
         performSegueWithIdentifier("detailRestaurant", sender: restaurant)
     }
  
