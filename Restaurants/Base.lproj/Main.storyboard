@@ -189,7 +189,6 @@
                                     <outlet property="iconImageView" destination="4Mg-WR-nhH" id="9ag-m3-Hvs"/>
                                     <outlet property="rankingLabel" destination="qoe-bw-7hy" id="aHX-40-9BI"/>
                                     <outlet property="titleLabel" destination="AGz-hy-Wqt" id="T04-Ua-JZQ"/>
-                                    <segue destination="dfI-6g-53c" kind="show" id="GlA-Pd-pdN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -199,10 +198,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="tFz-Oj-jv8"/>
+                    <connections>
+                        <segue destination="dfI-6g-53c" kind="show" identifier="detailRestaurant" id="MwR-D4-7tS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sSx-N2-YM5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="864" y="508"/>
+            <point key="canvasLocation" x="851" y="494"/>
         </scene>
         <!--Detail Table View Controller-->
         <scene sceneID="zlI-2y-yis">

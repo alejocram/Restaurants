@@ -22,7 +22,8 @@ class DetailTableViewController: UITableViewController {
     @IBOutlet weak var rankingLabel: UILabel!
     @IBOutlet weak var imageImageView: UIImageView!
     
-    var restaurant:Restaurant = Restaurant(name: "Mis Carnes", address: "Av 43 # 56 - 32", category: "Asados", wifi: true, webPage: "www.miscarnes.com", image: "pizza-restaurant")
+    var restaurant:Restaurant?
+//        = Restaurant(name: "Mis Carnes", address: "Av 43 # 56 - 32", category: "Asados", wifi: true, webPage: "www.miscarnes.com", image: "pizza-restaurant")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,17 +34,17 @@ class DetailTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.nameTableViewCell.textLabel?.text = restaurant.name
-        self.addressTableViewCell.textLabel?.text = restaurant.address
-        self.detailsTextView.text = restaurant.details
-        self.categoryTableViewCell.textLabel?.text = restaurant.category
-        self.scheduleTableViewCell.textLabel?.text = restaurant.schedule
-        self.paymentMethodsTableViewCell.detailTextLabel?.text = restaurant.paymentMethods
-        self.wifiTableViewCell.detailTextLabel?.text = (restaurant.wifi == true) ? "Si" : "No"
-        self.playgroundTableViewCell.detailTextLabel?.text = restaurant.playground == true ? "Si" : "No"
-        self.webPageTableViewCell.textLabel?.text = restaurant.webPage
-        self.rankingLabel.text = String(restaurant.ranking!)
-        self.imageImageView.image = UIImage(named: restaurant.image!)
+        self.nameTableViewCell.textLabel?.text = restaurant!.name
+        self.addressTableViewCell.textLabel?.text = restaurant!.address
+        self.detailsTextView.text = restaurant!.details
+        self.categoryTableViewCell.textLabel?.text = restaurant!.category
+        self.scheduleTableViewCell.textLabel?.text = restaurant!.schedule
+        self.paymentMethodsTableViewCell.detailTextLabel?.text = restaurant!.paymentMethods
+        self.wifiTableViewCell.detailTextLabel?.text = (restaurant!.wifi == true) ? "Si" : "No"
+        self.playgroundTableViewCell.detailTextLabel?.text = restaurant!.playground == true ? "Si" : "No"
+        self.webPageTableViewCell.textLabel?.text = restaurant!.webPage
+        self.rankingLabel.text = String(restaurant!.ranking!)
+        self.imageImageView.image = UIImage(named: restaurant!.image!)
     }
 
     override func didReceiveMemoryWarning() {
