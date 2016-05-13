@@ -478,11 +478,45 @@
                         <outlet property="scheduleTableViewCell" destination="ERe-Yz-Tp2" id="xf0-vd-csK"/>
                         <outlet property="webPageTableViewCell" destination="Iqe-Hp-dQh" id="gvn-De-uDd"/>
                         <outlet property="wifiTableViewCell" destination="hgI-n5-UDR" id="ZZh-Dm-eBm"/>
+                        <segue destination="e9b-AZ-WT2" kind="show" identifier="webpageRestaurant" id="XF9-Q2-vN4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ISr-lO-Slf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1592" y="469"/>
+        </scene>
+        <!--Webpage View Controller-->
+        <scene sceneID="zI0-0I-yN5">
+            <objects>
+                <viewController id="e9b-AZ-WT2" customClass="WebpageViewController" customModule="Restaurants" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TRs-RN-Lz6"/>
+                        <viewControllerLayoutGuide type="bottom" id="SEJ-vH-e1n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="brC-OC-JsY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZL-Im-KIO">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="cZL-Im-KIO" secondAttribute="trailing" constant="-20" id="Rjt-18-1OB"/>
+                            <constraint firstItem="cZL-Im-KIO" firstAttribute="top" secondItem="TRs-RN-Lz6" secondAttribute="bottom" id="atN-ci-6gs"/>
+                            <constraint firstItem="SEJ-vH-e1n" firstAttribute="top" secondItem="cZL-Im-KIO" secondAttribute="bottom" id="wfs-B1-4XI"/>
+                            <constraint firstItem="cZL-Im-KIO" firstAttribute="leading" secondItem="brC-OC-JsY" secondAttribute="leadingMargin" constant="-20" id="xN8-0H-RRm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="browserWebView" destination="cZL-Im-KIO" id="y6C-mt-Qfe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mE5-sC-m0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2293" y="469"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UGs-T9-ybJ">

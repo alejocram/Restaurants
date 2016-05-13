@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5914E56C1CE5B08700DE9EC1 /* WebpageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5914E56B1CE5B08700DE9EC1 /* WebpageViewController.swift */; };
 		591E764A1CDD6F4A000AAC75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591E76491CDD6F4A000AAC75 /* AppDelegate.swift */; };
 		591E764C1CDD6F4A000AAC75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591E764B1CDD6F4A000AAC75 /* ViewController.swift */; };
 		591E764F1CDD6F4A000AAC75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 591E764D1CDD6F4A000AAC75 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5914E56B1CE5B08700DE9EC1 /* WebpageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebpageViewController.swift; path = Controllers/WebpageViewController.swift; sourceTree = "<group>"; };
 		591E76461CDD6F49000AAC75 /* Restaurants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restaurants.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		591E76491CDD6F4A000AAC75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		591E764B1CDD6F4A000AAC75 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				59DDF9B21CDE3096008BE32F /* DetailTableViewController.swift */,
 				59CA62A71CE40E84006F75FD /* RestaurantListTableViewController.swift */,
+				5914E56B1CE5B08700DE9EC1 /* WebpageViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				591E764C1CDD6F4A000AAC75 /* ViewController.swift in Sources */,
 				59DB5A341CE4201B00E79EF2 /* RestaurantTableViewCell.swift in Sources */,
 				591E764A1CDD6F4A000AAC75 /* AppDelegate.swift in Sources */,
+				5914E56C1CE5B08700DE9EC1 /* WebpageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

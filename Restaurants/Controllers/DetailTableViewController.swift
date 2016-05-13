@@ -51,6 +51,10 @@ class DetailTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("webpageRestaurant", sender: restaurant?.webPage)
+    }
 
     // MARK: - Table view data source
 
@@ -109,14 +113,16 @@ class DetailTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let destinationViewController = segue.destinationViewController as! WebpageViewController
+        destinationViewController.url = sender as? String
     }
-    */
+    
 
 }
