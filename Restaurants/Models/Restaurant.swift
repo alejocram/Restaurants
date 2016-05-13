@@ -47,11 +47,11 @@ class Restaurant: NSObject {
     
     static func restaurants() -> [Restaurant]{
         let restaurants:[Restaurant] = [
-            Restaurant(name: "French Bread", address: "Calle 34 # 23-43", category: "Francesa", wifi: true, webPage: "www.french-bread-restaurant.com", image: "french-bread-restaurant"),
-            Restaurant(name: "Breakfast", address: "Calle 34 # 23-43", category: "Tipica", wifi: true, webPage: "www.breakfast-restaurant.com", image: "breakfast-restaurant"),
-            Restaurant(name: "Pizza", address: "Calle 34 # 23-43", category: "Italiana", wifi: true, webPage: "www.pizza-restaurant.com", image: "pizza-restaurant"),
-            Restaurant(name: "Mexican", address: "Calle 34 # 23-43", category: "Mexicana", wifi: true, webPage: "www.mexican-restaurant.com", image: "mexican-restaurant"),
-            Restaurant(name: "Parrilla", address: "Calle 34 # 23-43", category: "Asados", wifi: true, webPage: "www.parrilla-restaurant.com", image: "parrilla-restaurant")
+            Restaurant(name: "French Bread", address: "Calle 34 # 23-43", category: "Francesa", wifi: true, webPage: "https://www.google.com", image: "french-bread-restaurant"),
+            Restaurant(name: "Breakfast", address: "Calle 34 # 23-43", category: "Tipica", wifi: true, webPage: "https://www.apple.com", image: "breakfast-restaurant"),
+            Restaurant(name: "Pizza", address: "Calle 34 # 23-43", category: "Italiana", wifi: true, webPage: "https://www.yahoo.com", image: "pizza-restaurant"),
+            Restaurant(name: "Mexican", address: "Calle 34 # 23-43", category: "Mexicana", wifi: true, webPage: "https://www.microsoft.com", image: "mexican-restaurant"),
+            Restaurant(name: "Parrilla", address: "Calle 34 # 23-43", category: "Asados", wifi: true, webPage: "https://www.gmail.com", image: "parrilla-restaurant")
         ]
         return restaurants
     }
