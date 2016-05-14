@@ -90,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				591E76491CDD6F4A000AAC75 /* AppDelegate.swift */,
-				591E764B1CDD6F4A000AAC75 /* ViewController.swift */,
 				591E764D1CDD6F4A000AAC75 /* Main.storyboard */,
 				591E76501CDD6F4A000AAC75 /* Assets.xcassets */,
 				591E76521CDD6F4A000AAC75 /* LaunchScreen.storyboard */,
@@ -123,6 +122,7 @@
 		59DDF9B41CDE30B8008BE32F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				591E764B1CDD6F4A000AAC75 /* ViewController.swift */,
 				59DDF9B21CDE3096008BE32F /* DetailTableViewController.swift */,
 				59CA62A71CE40E84006F75FD /* RestaurantListTableViewController.swift */,
 				5914E56B1CE5B08700DE9EC1 /* WebpageViewController.swift */,
