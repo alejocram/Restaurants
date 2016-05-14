@@ -15,9 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var termsLabel: UILabel!
     @IBOutlet weak var generSegmented: UISegmentedControl!
     @IBOutlet weak var termsSwitch: UISwitch!
-
     
     var gener1:String?
+    
+    let model = UserModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +44,28 @@ class ViewController: UIViewController {
     @IBAction func register(sender: AnyObject) {
         if termsSwitch.on {
         
-        let email = emailTextField.text
-        let password = passwordTextField.text
+            let email = emailTextField.text
+            let password = passwordTextField.text
+            let gener = gener1;
+            
+            model.saveUser(User(username: email!, password:password!, gener:gener!), completion: { (success, response) in
+                if success {
+                    let defaults = NSUserDefaults.standardUserDefaults()
+                    defaults.setValue(email, forKey: "username")
+                    
+                    NSNotificationCenter.defaultCenter().postNotificationName("setUsername", object: nil)
+                } else {
+                    let alert = UIAlertController(title: "Error", message: "No fue posible el registro", preferredStyle: .Alert)
+                    
+                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    alert.addAction(defaultAction)
+                    
+                    self.presentViewController(alert, animated: true, completion: nil)
+                    
+                }
+            })
         
-        termsLabel.text = email! + password!
+            self.dismissViewControllerAnimated(true, completion: nil)
         } else {
             let alert = UIAlertView(title: "Registro", message: "Debes aceptar los terminos y condiciones", delegate: nil, cancelButtonTitle: "Ok")
             

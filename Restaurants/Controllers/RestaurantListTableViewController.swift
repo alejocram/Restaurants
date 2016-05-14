@@ -16,12 +16,22 @@ class RestaurantListTableViewController: UITableViewController {
         super.viewDidLoad()
         
         getRestaurants()
-
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(setUsername),
+            name: "setUsername",
+            object: nil)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func setUsername() {
+        self.navigationItem.rightBarButtonItem?.title = (NSUserDefaults.standardUserDefaults().objectForKey("username") as! String)
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,9 +113,16 @@ class RestaurantListTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let destinationViewController = segue.destinationViewController as! DetailTableViewController
-        destinationViewController.restaurant = sender as! Restaurant
         
+        switch segue.identifier! {
+        case "detailRestaurant":
+            let destinationViewController = segue.destinationViewController as! DetailTableViewController
+            destinationViewController.restaurant = sender as! Restaurant
+        case "login":
+            let destinationViewController = segue.destinationViewController as! ViewController
+        default:
+            UIAlertController(title: "Error", message: "No se encontro el segue", preferredStyle: .Alert)
+        }
     }
     
     func getRestaurants(){
