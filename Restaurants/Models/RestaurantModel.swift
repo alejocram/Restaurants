@@ -17,7 +17,7 @@ class RestaurantModel: NSObject {
     
     func getRestaurantsFromServer(completion: CompletionHandler){
         let request = RestaurantService()
-        request.getContacts { (success, response) in
+        request.getRestaurants { (success, response) in
             if success {
                 self.restaurants.removeAll()
                 

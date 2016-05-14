@@ -19,7 +19,7 @@ let headers = [
 class RestaurantService: NSObject {
     let url = "https://baas.kinvey.com/appdata/kid_-k7D-nZ5Mb/restaurants"
     
-    func getContacts(completion:CompletionHandlerGET){
+    func getRestaurants(completion:CompletionHandlerGET){
         Alamofire.request(.GET, url, parameters: nil, headers: headers)
             .responseJSON(){response in
                 
