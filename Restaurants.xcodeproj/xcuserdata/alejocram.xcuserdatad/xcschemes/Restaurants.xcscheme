@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "591E76451CDD6F49000AAC75"
+               BlueprintIdentifier = "59E40A6F1CEAD6BF0018F17F"
                BuildableName = "Restaurants.app"
                BlueprintName = "Restaurants"
                ReferencedContainer = "container:Restaurants.xcodeproj">
@@ -32,7 +32,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "591E76451CDD6F49000AAC75"
+            BlueprintIdentifier = "59E40A6F1CEAD6BF0018F17F"
             BuildableName = "Restaurants.app"
             BlueprintName = "Restaurants"
             ReferencedContainer = "container:Restaurants.xcodeproj">
@@ -55,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "591E76451CDD6F49000AAC75"
+            BlueprintIdentifier = "59E40A6F1CEAD6BF0018F17F"
             BuildableName = "Restaurants.app"
             BlueprintName = "Restaurants"
             ReferencedContainer = "container:Restaurants.xcodeproj">
@@ -74,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "591E76451CDD6F49000AAC75"
+            BlueprintIdentifier = "59E40A6F1CEAD6BF0018F17F"
             BuildableName = "Restaurants.app"
             BlueprintName = "Restaurants"
             ReferencedContainer = "container:Restaurants.xcodeproj">
