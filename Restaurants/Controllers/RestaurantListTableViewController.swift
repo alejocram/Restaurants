@@ -117,7 +117,7 @@ class RestaurantListTableViewController: UITableViewController {
         switch segue.identifier! {
         case "detailRestaurant":
             let destinationViewController = segue.destinationViewController as! DetailTableViewController
-            destinationViewController.restaurant = sender as! Restaurant
+            destinationViewController.restaurant = (sender as! Restaurant)
         case "login":
             let destinationViewController = segue.destinationViewController as! ViewController
         default:
@@ -128,15 +128,56 @@ class RestaurantListTableViewController: UITableViewController {
     func getRestaurants(){
         model.getRestaurantsFromServer { (success, response) in
             if success {
-                self.tableView.reloadData()
+                do{
+                    try self.model.fetchRestaurants()
+                    self.tableView.reloadData()
+                }catch let error as NSError{
+                    let alertController = UIAlertController(title: "Persistencia", message: "No se pudo traer los datos desde la base de datos \(error.localizedDescription)", preferredStyle: .Alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    alertController.addAction(defaultAction)
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
             } else {
-                let alertController = UIAlertController(title: "Conexión", message: "No se pudo realizar la conexión", preferredStyle: .Alert)
                 
+                let alertController = UIAlertController(title: "Conexión", message: "No se pudo realizar la conexión", preferredStyle: .Alert)
                 let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
                 alertController.addAction(defaultAction)
-                
                 self.presentViewController(alertController, animated: true, completion: nil)
+                
+                // Al no tener conexion, se prueba que puede guardar */
+                /*do{
+                    try self.model.saveRestaurant(Restaurant(name: "El cielo", address: "Calle 10 # 60 - 35 int 1305", category: "Gourmet", wifi: true, webPage: "https://www.amazon.com", image: "parrilla-restaurant"))
+                }catch let error as NSError{
+                    print(error.localizedDescription)
+                }*/
+                
+                do{
+                    try self.model.fetchRestaurants()
+                    self.tableView.reloadData()
+                }catch let error as NSError{
+                    let alertController = UIAlertController(title: "Persistencia", message: "No se pudo traer los datos desde la base de datos \(error.localizedDescription)", preferredStyle: .Alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    alertController.addAction(defaultAction)
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
             }
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
