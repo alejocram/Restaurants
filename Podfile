@@ -7,4 +7,5 @@ target 'Restaurants' do
 
   # Pods for Restaurants
   pod 'Alamofire'
+  pod 'GoogleMaps'
 end

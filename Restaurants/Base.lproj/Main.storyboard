@@ -305,6 +305,9 @@
                                                         <constraint firstAttribute="height" constant="88" id="ft1-0M-6EH"/>
                                                     </constraints>
                                                     <state key="normal" title="Mapa"/>
+                                                    <connections>
+                                                        <segue destination="L6l-p3-vlK" kind="show" identifier="map" id="3Cx-cc-vqm"/>
+                                                    </connections>
                                                 </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDi-52-foQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="504" height="88"/>
@@ -462,6 +465,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="e9b-AZ-WT2" kind="show" identifier="webpageRestaurant" id="ybW-7y-JTi"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -484,7 +490,6 @@
                         <outlet property="scheduleTableViewCell" destination="ERe-Yz-Tp2" id="xf0-vd-csK"/>
                         <outlet property="webPageTableViewCell" destination="Iqe-Hp-dQh" id="gvn-De-uDd"/>
                         <outlet property="wifiTableViewCell" destination="hgI-n5-UDR" id="ZZh-Dm-eBm"/>
-                        <segue destination="e9b-AZ-WT2" kind="show" identifier="webpageRestaurant" id="XF9-Q2-vN4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ISr-lO-Slf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -523,6 +528,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mE5-sC-m0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2293" y="469"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="NET-Ja-0gV">
+            <objects>
+                <viewController id="L6l-p3-vlK" customClass="MapViewController" customModule="Restaurants" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pEB-UW-AVg"/>
+                        <viewControllerLayoutGuide type="bottom" id="mES-U2-A7Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0GZ-YX-lnA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9pD-UB-JUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1949" y="1195"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UGs-T9-ybJ">

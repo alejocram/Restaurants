@@ -48,16 +48,12 @@ class DetailTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.detailsTextView.setContentOffset(CGPoint.zero, animated: true)
+        self.detailsTextView.setContentOffset(CGPoint.zero, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("webpageRestaurant", sender: restaurant?.webPage)
     }
 
     // MARK: - Table view data source
@@ -124,9 +120,33 @@ class DetailTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let destinationViewController = segue.destinationViewController as! WebpageViewController
-        destinationViewController.url = sender as? String
+        if segue.identifier == "webpageRestaurant" {
+            let destinationViewController = segue.destinationViewController as! WebpageViewController
+            destinationViewController.url = restaurant?.webPage
+        } else if segue.identifier == "map" {
+            let destinationViewController = segue.destinationViewController as! MapViewController
+            destinationViewController.restaurant = restaurant
+        }
     }
-    
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
