@@ -62,9 +62,29 @@ class RestaurantModel: NSObject {
         do {
             let result = try managedContext.executeFetchRequest(fetch)
             managedObjects = result as! [NSManagedObject]
-            return manageObjectToRestauran()
+            self.manageObjectToRestauran()
         } catch let error as NSError {
             print("No pude recuperar datos, Error: \(error.localizedDescription)")
+            throw error
+        }
+    }
+    
+    func deleteRestaurants() throws {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        for managedObject in managedObjects {
+            do{
+                managedContext.deleteObject(managedObject)
+            }
+        }
+        
+        do {
+            try managedContext.save()
+            managedObjects.removeAll()
+            restaurants.removeAll()
+        } catch let error as NSError{
+            print("No se pude guardar los datos, Error: \(error.localizedDescription)")
             throw error
         }
     }
@@ -98,7 +118,12 @@ class RestaurantModel: NSObject {
         let request = RestaurantService()
         request.getRestaurants { (success, response) in
             if success {
-                self.restaurants.removeAll()
+                
+                do{
+                    try self.deleteRestaurants()
+                } catch let error as NSError {
+                    completion(success: false, response: self.restaurants)
+                }
                 
                 for item in response {
                     let restaurantTmp = Restaurant(name: item["name"] as! String, address: item["address"] as! String, details: item["details"] as! String, lat: item["lat"] as! Double, lon: item["lon"] as! Double, category: item["category"] as! String, schedule: item["schedule"] as! String, paymentMethods: item["paymentMethods"] as! String, wifi: item["wifi"] as! Bool, playground: item["playground"] as! Bool, webPage: item["webPage"] as! String, ranking: item["ranking"] as! Float, image: item["image"] as! String)

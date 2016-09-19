@@ -126,6 +126,16 @@ class RestaurantListTableViewController: UITableViewController {
     }
     
     func getRestaurants(){
+        do{
+            try self.model.fetchRestaurants()
+            self.tableView.reloadData()
+        }catch let error as NSError{
+            let alertController = UIAlertController(title: "Persistencia", message: "No se pudo traer los datos desde la base de datos \(error.localizedDescription)", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+        
         model.getRestaurantsFromServer { (success, response) in
             if success {
                 do{
@@ -145,11 +155,11 @@ class RestaurantListTableViewController: UITableViewController {
                 self.presentViewController(alertController, animated: true, completion: nil)
                 
                 // Al no tener conexion, se prueba que puede guardar */
-                /*do{
+                do{
                     try self.model.saveRestaurant(Restaurant(name: "El cielo", address: "Calle 10 # 60 - 35 int 1305", category: "Gourmet", wifi: true, webPage: "https://www.amazon.com", image: "parrilla-restaurant"))
                 }catch let error as NSError{
                     print(error.localizedDescription)
-                }*/
+                }
                 
                 do{
                     try self.model.fetchRestaurants()
